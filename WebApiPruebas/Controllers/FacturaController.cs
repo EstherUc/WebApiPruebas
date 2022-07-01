@@ -23,12 +23,18 @@ namespace WebApiPruebas.Controllers
             return await repositorioFacturas.ListarFacturas(); 
         }
 
-        [HttpGet("id:int")]
+       /*[HttpGet("id:int")]
         public async Task<ActionResult<IEnumerable<Factura>>> FacturaPorId(int id)
         {
+            var factura = await repositorioFacturas.BucarPorId(id);
+
+            if(factura == null)
+            {
+                return NotFound();
+            }
+
             return await repositorioFacturas.FacturaPorId(id);
-        }
-        
+        }*/
 
         [HttpPost("Crear")]
         public async Task<ActionResult> Crear(Factura factura)

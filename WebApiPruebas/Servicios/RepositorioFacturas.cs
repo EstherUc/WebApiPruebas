@@ -8,7 +8,7 @@ namespace WebApiPruebas.Servicios
     {
         Task<Factura> BucarPorId(int id);
         Task Crear(Factura factura);
-        Task<Factura> FacturaPorId(int id);
+        //Task<Factura> FacturaPorId(int id);
         Task<List<Factura>> ListarFacturas();
     }
 
@@ -44,13 +44,13 @@ namespace WebApiPruebas.Servicios
                                                                          FROM Facturas;");
         }
 
-        public async Task<List<Factura>> FacturaPorId(int id)
+       /*public async Task<List<Factura>> FacturaPorId(int id)
         {
             using var connection = new SqlConnection(connectionString);
             return (List<Factura>)await connection.QueryAsync<Factura>(@"SELECT f.Id, f.Nom_Empresa, f.ClienteId, c.Nombre
                                                           FROM Facturas f, Clientes c
                                                           WHERE f.ClienteId = c.Id AND c.Id = @id;", new { id });
-        }
+        }*/
 
     }
 }
